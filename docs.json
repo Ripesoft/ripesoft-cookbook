@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "maple",
   "name": "ripesoft cookbook",
   "colors": {
     "primary": "#7B53D4",
@@ -48,6 +48,7 @@
     "tabs": [
       {
         "tab": "Glide Cookbook",
+        "icon": "hat-chef",
         "groups": [
           {
             "group": "Solution guides",
