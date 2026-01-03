@@ -3,7 +3,7 @@ title: "Multiple File Types Preview"
 mode: "wide"
 ---
 
-### 🌿 Ingredients:
+## 🌿 Ingredients
 
 <Steps>
   <Step title="iframe template for spreadheet preview:">
@@ -19,6 +19,29 @@ mode: "wide"
   <Step title="Optional - Experimental Code">
     For minimalistic / brandless / custom-branded previews you can use an experimental code column for parsing the spreadheet and then build an html table.
 
-    https://ripesoft.github.io/Glide-html-table-from-csv-url/
+    Direct link (for testing): https://ripesoft.github.io/Glide-html-table-from-csv-url/
+
+    Full repo link (to fork and edit): https://github.com/Ripesoft/Glide-html-table-from-csv-url
+  </Step>
+</Steps>
+
+## 🥗  Implementation
+
+<Steps>
+  <Step title="Get the extension from file url">
+    Use the Extract Matching Text column to get the file extension with regex.
+  </Step>
+  <Step title="Create an interactive viewer iframe template">
+    Use a template column to replace `YOUR_FILE_LINK_HERE` placeholder in the iframe template with your file URL. 
+
+    Next, use an HTML to URL column to create an URL you can use with Web Embed.
+  </Step>
+  <Step title="[Optional] Add an alternative static table view">
+    Use Experimental Code Column to create a static HTML from the file (for production uses, please fork the repo).
+
+    Next, use an HTML to URL column to create an URL you can use with Web Embed.
+  </Step>
+  <Step title="Add conditional display">
+    Add in F Then Else column
   </Step>
 </Steps>
