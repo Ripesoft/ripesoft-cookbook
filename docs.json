@@ -8,6 +8,37 @@
     "dark": "#7B53D4"
   },
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Github",
+          "icon": "book-open-cover",
+          "color": {
+            "light": "#7B53D4",
+            "dark": "#7B53D4"
+          },
+          "href": "https://github.com/Ripesoft"
+        },
+        {
+          "anchor": "Website",
+          "icon": "newspaper",
+          "color": {
+            "light": "#7B53D4",
+            "dark": "#7B53D4"
+          },
+          "href": "https://www.ripesoft.co/"
+        },
+        {
+          "anchor": "YouTube",
+          "icon": "video",
+          "color": {
+            "light": "#7B53D4",
+            "dark": "#7B53D4"
+          },
+          "href": "https://www.youtube.com/@Ripesoftapps"
+        }
+      ]
+    },
     "tabs": [
       {
         "tab": "Guides",
@@ -66,21 +97,7 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": "/logo/IMG_0081.png",
   "navbar": {
@@ -114,5 +131,6 @@
       "linkedin": "https://www.linkedin.com/in/mariusz-s%C5%82awik-2a51291b6/",
       "youtube": "https://www.youtube.com/@Ripesoftapps"
     }
-  }
+  },
+  "description": "Juicy stuff"
 }
