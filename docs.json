@@ -103,8 +103,8 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Ask anything",
+        "href": "https://www.ripesoft.co/contact"
       }
     ],
     "primary": {
@@ -132,5 +132,6 @@
       "youtube": "https://www.youtube.com/@Ripesoftapps"
     }
   },
-  "description": "Juicy stuff"
+  "description": "Juicy stuff",
+  "favicon": "/logo/IMG_0081.png"
 }
