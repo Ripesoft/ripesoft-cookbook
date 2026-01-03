@@ -1,13 +1,12 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "willow",
+  "name": "ripesoft cookbook",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7B53D4",
+    "light": "#7B53D4",
+    "dark": "#7B53D4"
   },
-  "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
@@ -83,10 +82,7 @@
       ]
     }
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
+  "logo": "/images/IMG_0081.png",
   "navbar": {
     "links": [
       {
@@ -114,9 +110,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/Ripesoft",
+      "linkedin": "https://www.linkedin.com/in/mariusz-s%C5%82awik-2a51291b6/",
+      "youtube": "https://www.youtube.com/@Ripesoftapps"
     }
   }
 }
