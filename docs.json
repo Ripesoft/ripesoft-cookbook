@@ -101,7 +101,7 @@
     "decoration": "gradient"
   },
   "logo": {
-    "light": "/images/logo-lightpng",
-    "dark": "/images/logo-dark.png"
+    "light": "/logo/logo-light.png",
+    "dark": "/logo/logo-dark.png"
   }
 }
