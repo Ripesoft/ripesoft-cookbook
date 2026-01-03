@@ -1,0 +1,23 @@
+---
+title: "Multiple File Types Preview"
+---
+
+### 🌿 Ingredients:
+
+<Steps>
+  <Step title="iframe template for spreadheet preview:">
+    ```tsx
+    <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=YOUR_FILE_LINK_HERE" width="100%" height="500px"></iframe>
+    ```
+  </Step>
+  <Step title="Regex to get the file extension">
+    ```tsx
+    \.([^.]*)$
+    ```
+  </Step>
+  <Step title="Optional - Experimental Code">
+    For minimalistic / brandless / custom-branded previews you can use an experimental code column for parsing the spreadheet and then build an html table.
+
+    https://ripesoft.github.io/Glide-html-table-from-csv-url/
+  </Step>
+</Steps>
