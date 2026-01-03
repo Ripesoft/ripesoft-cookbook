@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "willow",
+  "theme": "mint",
   "name": "ripesoft cookbook",
   "colors": {
     "primary": "#7B53D4",
