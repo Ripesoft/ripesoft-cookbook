@@ -93,5 +93,8 @@
     }
   },
   "description": "Juicy stuff",
-  "favicon": "/logo/IMG_0081.png"
+  "favicon": "/logo/IMG_0081.png",
+  "appearance": {
+    "default": "system"
+  }
 }
