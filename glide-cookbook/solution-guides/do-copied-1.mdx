@@ -14,10 +14,13 @@ mode: "wide"
     Get the code from here: https://github.com/Ripesoft/glide-wiki-images-column
   </Step>
   <Step title="Simple JSONata queries to get results">
-    Get the first image:
+    Get image urls and data
 
     ```
-    images
+    images.url
+    images.attribution
+    images.license
+    images.description
     ```
 
     Get the error message:
@@ -40,9 +43,9 @@ mode: "wide"
     This is is contact information to the person responsible for your implementation.
   </Step>
   <Step title="Query the response">
-    You can use a `Template Column` as input to the `Query JSON` column with dynamic index to get the nth image: `images[n]`
+    You can use a `Template Column` as input to the `Query JSON` column with dynamic index to get the nth image: `images[n]`, or nth image url: `images[n].url`
 
-    Alternatively, query all `images` and use `Single Value` column to get the chosen image based on nth index.
+    Alternatively, query `images.url`, etc. to get all image values and implement`Single Value` column to get the chosen image based on nth index.
 
     Use `error` to in `Query JSON` column to inform the user of the app why the request was unsuccesful.
   </Step>
