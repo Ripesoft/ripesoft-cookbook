@@ -1,0 +1,102 @@
+---
+title: "Fetch Wikimedia image URLs"
+mode: "wide"
+---
+
+<Danger>
+  When using this script, you must strictly adhere to the Wikimedia policy to avoid getting your app (and IP) banned by Wikimedia.
+</Danger>
+
+## 🌿 Ingredients
+
+<Steps>
+  <Step title="Forked Experimental Code Column">
+    Get the code from here: https://github.com/Ripesoft/glide-wiki-images-column
+  </Step>
+  <Step title="Simple JSONata queries to get results">
+    Get the first image:
+
+    ```
+    images
+    ```
+
+    Get the error message:
+
+    ```
+    error
+    ```
+  </Step>
+</Steps>
+
+## 🥗  Implementation
+
+<Steps>
+  <Step title="Host the copy of the repo and use in Glide">
+    Fork the repo and host on Github Pages. Alternatively, download it and upload to Replit or other host of your choice.
+  </Step>
+  <Step title="Declare the parameters">
+    To comply with Wikimedia policy, you need to **declare** **User Name** and **User Email.**
+
+    This is is contact information to the person responsible for your implementation.
+  </Step>
+  <Step title="Query the response">
+    You can use a `Template Column` as input to the `Query JSON` column with dynamic index to get the nth image: `images[n]`
+
+    Alternatively, query all `images` and use `Single Value` column to get the chosen image based on nth index.
+
+    Use `error` to in `Query JSON` column to inform the user of the app why the request was unsuccesful.
+  </Step>
+</Steps>
+
+## **API Limits, Etiquette & Critical Warnings**
+
+### **1. The "User-Agent" Policy (Mandatory)**
+
+Wikimedia blocks requests that do not identify the user. This script injects a `User-Agent` header using the `userName` and `userEmail` inputs you provide.
+
+- **The Rule:** You must provide real information.
+- **Good:** `MyGlidApp/1.0 (dev@myapp.com)`
+- **Bad:** `Test` or `Bot` or leaving it blank.
+- **Consequence:** If you fake this data or leave it empty, the API will return a `403 Forbidden` error immediately.
+
+### **2. The Concurrency Danger (Glide Specific)**
+
+<Warning>
+  Because this script runs in a Glide column, it's easy to hit high request rates if you have many rows.
+</Warning>
+
+This is the **most critical technical risk**.
+
+- **How Glide Works:** When you open an app, Glide tries to compute every visible row simultaneously.
+- **The Risk:** If you apply this column to a table with 500 rows, Glide will fire **500+ API requests instantly**.
+- **The Result:** Wikimedia identifies this as a "Denial of Service" (DoS) attack or abusive scraping and will **block your IP address** or throttle your app, breaking the images for all users.
+- **The Solution:**
+  - Only use this on "Details" screens (single item view).
+  - **Never** use this on a massive list view (Collection) unless the dataset is very small (\<50 items).
+
+<Check>
+  Always control the keyword input to only execute the request at the time when it's needed. If the keyword is not provided, the script will not call the API.
+</Check>
+
+### **3. Two-Step Fetch Cost**
+
+The provided script is "expensive" in terms of resources.
+
+- **Logic:** It makes **two** separate calls per keyword:
+  1. Call 1: Finds the page and main thumbnail.
+  2. Call 2: Fetches the URLs for the other images in the gallery.
+- **Impact:** A list of 10 items results in 20 API calls. This doubles the load on Wikimedia servers, increasing the likelihood of hitting rate limits.
+
+### **4. Content Licensing (CC BY-SA)**
+
+Technically, you are fetching content owned by others.
+
+- **Attribution:** You are legally required to attribute the source. You should display "Source: Wikipedia" or the specific author's name (which can be fetched via metadata) near the image.
+- **Commercial Use:** If your Glide app is commercial/paid, be very careful. Some images are "Fair Use" only and cannot be used in commercial products.
+
+### **5. Enterprise Usage**
+
+If your app scales and you have thousands of users triggering these searches daily, you are violating the "Etiquette" policy of the free API.
+
+- **Threshold:** If you exceed ~5,000 req/month regularly.
+- **Action:** You must switch to the **Wikimedia Enterprise API** (paid/commercial tier) or build a caching server to store the image URLs so you don't hit Wikipedia every time a user opens the app.
